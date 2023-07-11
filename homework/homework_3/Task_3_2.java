@@ -8,11 +8,17 @@ public class Task_3_2 {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         double cost = Double.parseDouble(args[0]);
-        double discount = 0;
 
-        System.out.println("Введіть кількість товару, яку Ви хочете придбати:");
+        System.out.println("Enter the quantity of the product you want to purchase:");
         int quantity = Integer.parseInt(reader.readLine());
 
+        double discount = calculateDiscount(quantity);
+        double amount = calculateAmount(quantity, cost, discount);
+
+        System.out.println("The total amount of the product is: " + amount);
+    }
+    public static double calculateDiscount(int quantity) {
+        double discount = 0;
         if (quantity > 10 && quantity <= 20) {
             discount = 5;
         } else if (quantity > 20 && quantity <= 30) {
@@ -26,10 +32,9 @@ public class Task_3_2 {
         } else if (quantity > 80) {
             discount = 13;
         }
-
-        double amount = quantity * cost * ((100 - discount) / 100);
-
-        System.out.println("Загальна сума товару складає: " + amount);
-
+        return discount;
+    }
+    public static double calculateAmount(int quantity, double cost, double discount) {
+        return quantity * cost * ((100 - discount) / 100);
     }
 }
