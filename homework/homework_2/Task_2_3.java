@@ -9,23 +9,23 @@ public class Task_2_3 {
 
         BufferedReader reader = new BufferedReader((new InputStreamReader(System.in)));
 
-        System.out.println("Введіть кількість робочих годин на тиждень:");
-
+        System.out.println("Enter the number of working hours per week:");
         int hours = Integer.parseInt(reader.readLine());
-
-        System.out.println("Введіть розмір річної зарплатні з податками:");
-
+        System.out.println("Enter the salary per year with taxes:");
         double salaryWithTaxes = Double.parseDouble(reader.readLine());
-
-        System.out.println("Введіть відсоток податку:");
-
+        System.out.println("Enter the tax percentage:");
         double tax = Double.parseDouble(reader.readLine());
 
-        double salaryWithoutTaxes = salaryWithTaxes - (salaryWithTaxes * tax/100);
+        double salaryWithoutTaxes = calculateSalaryWithoutTaxes(salaryWithTaxes, tax);
+        double costWithoutTaxes = calculateCostWithoutTaxes(salaryWithoutTaxes, hours);
 
-        double costWithoutTaxes = salaryWithoutTaxes/12/4/hours;
-
-        System.out.println("При " + hours + " робочих годин на тиждень з річною зарплатею в " + salaryWithTaxes + " та податком "
-                + tax + " година часу коштує " + costWithoutTaxes);
+        System.out.println("At " + hours + " working hours per week with the salary per year " + salaryWithTaxes + " and tax "
+                + tax + " an hour costs " + costWithoutTaxes);
+    }
+    public static double calculateSalaryWithoutTaxes(double salaryWithTaxes, double tax){
+        return salaryWithTaxes - (salaryWithTaxes * tax/100);
+    }
+    public static double calculateCostWithoutTaxes(double salaryWithoutTaxes, int hours){
+        return salaryWithoutTaxes/12/4/hours;
     }
 }
