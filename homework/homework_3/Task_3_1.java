@@ -8,22 +8,25 @@ public class Task_3_1 {
     public static void main(String[] args) throws IOException {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Введіть число:");
 
+        System.out.println("Enter the number:");
         int number = Integer.parseInt(reader.readLine());
 
+        printNumberInfo(number);
+    }
+    public static void printNumberInfo(int number) {
         if (number % 2 == 0) {
-            System.out.println("Число є парним.");
+            System.out.println("The number is even.");
         } else {
-            System.out.println("Число є непарним.");
+            System.out.println("The number is odd.");
         }
 
         if (number > 0) {
-            System.out.println("Число є додатнім.");
+            System.out.println("The number is positive.");
             if (number == 1) {
-                System.out.println("1 не є ні простим, ні складеним числом.");
+                System.out.println("1 is neither a prime nor a composite number.");
             } else if (number == 2) {
-                System.out.println("Число є простим.");
+                System.out.println("The number is prime.");
             } else {
                 boolean isSimple = true;
                 for (int i = 2; i < number; i++) {
@@ -33,18 +36,18 @@ public class Task_3_1 {
                     }
                 }
                 if (isSimple) {
-                    System.out.println("Число є простим.");
+                    System.out.println("The number is prime.");
                 } else {
-                    System.out.println("Число є складеним.");
+                    System.out.println("The number is composite.");
                 }
             }
 
         } else if (number < 0) {
-            System.out.println("Число є від'ємним.");
-            System.out.println("Від'ємні числа не можуть бути простими чи складеними.");
+            System.out.println("The number is negative.");
+            System.out.println("Negative numbers cannot be prime or composite.");
         } else {
-            System.out.println("0 не є ні додатнім, ні від'ємним числом.");
-            System.out.println("0 не є ні простим, ні складеним числом.");
+            System.out.println("0 is neither positive nor negative.");
+            System.out.println("0 is neither a prime nor a composite number.");
         }
     }
 }
