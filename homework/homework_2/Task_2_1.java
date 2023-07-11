@@ -9,16 +9,14 @@ public class Task_2_1  {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        System.out.println("Введіть число:");
-
+        System.out.println("Enter the number:");
         int number = Integer.parseInt(reader.readLine());
-
-        System.out.println("Введіть степінь:");
-
+        System.out.println("Enter the power of the number:");
         int power = Integer.parseInt(reader.readLine());
 
-        int result = (int) Math.pow(number, power);
-
-        System.out.println("Результат: " + result);
+        System.out.println("Result: " + powNum(number, power));
+    }
+    public static int powNum(int number, int power) {
+        return (int) Math.pow(number, power);
     }
 }
