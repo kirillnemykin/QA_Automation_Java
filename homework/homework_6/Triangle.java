@@ -25,12 +25,12 @@ public class Triangle {
         return c;
     }
 
-    public int getPerimeter(int a, int b, int c) {
+    public static int getPerimeter(int a, int b, int c) {
         int p = a + b + c;
         return p;
     }
 
-    public double getSquare(int a, int b, int c) {
+    public static double getSquare(int a, int b, int c) {
         double p = (a+b+c)/2;
         double s = Math.sqrt(p*(p-a)*(p-b)*(p-c));
         return s;
