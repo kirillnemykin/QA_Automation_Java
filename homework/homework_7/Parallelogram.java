@@ -3,26 +3,19 @@ package homework.homework_7;
 public class Parallelogram extends Quadrangle{
 
     public Parallelogram(double sideA, double sideB, double angleA) {
-            this.sideA = sideA;
-            this.sideB = sideB;
-            this.sideC = sideA;
-            this.sideD = sideB;
-            this.angleA = angleA;
-            this.angleB = 180 - angleA;
-            this.angleC = angleA;
-            this.angleD = 180 - angleA;
+            super(sideA, sideB, sideA, sideB, angleA, 180-angleA, angleA, 180-angleA);
     }
-
-    public Parallelogram() {
-
-    }
-
 
     @Override
     public double getPerimeter() {
-        double perimeter = sideA*2 + sideB*2;
+        double perimeter = 2*super.getSideA() + 2*super.getSideB();
         return perimeter;
     }
 
+    @Override
+    public double getSquare() {
+        double square = super.getSideA() * super.getSideB() * Math.sin(super.getAngleA());
+        return square;
+    }
 
 }

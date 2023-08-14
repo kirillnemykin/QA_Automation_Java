@@ -1,14 +1,25 @@
 package homework.homework_7;
 
 public abstract class Quadrangle extends Figure {
-    protected double sideA;
-    protected double sideB;
-    protected double sideC;
-    protected double sideD;
-    protected double angleA;
-    protected double angleB;
-    protected double angleC;
-    protected double angleD;
+    private double sideA;
+    private double sideB;
+    private double sideC;
+    private double sideD;
+    private double angleA;
+    private double angleB;
+    private double angleC;
+    private double angleD;
+
+    public Quadrangle(double sideA, double sideB, double sideC, double sideD, double angleA, double angleB, double angleC, double angleD) {
+        this.sideA = sideA;
+        this.sideB = sideB;
+        this.sideC = sideC;
+        this.sideD = sideD;
+        this.angleA = angleA;
+        this.angleB = angleB;
+        this.angleC = angleC;
+        this.angleD = angleD;
+    }
 
     public double getSideA() {
         return sideA;

@@ -13,6 +13,12 @@ public class Circle extends Figure{
         return perimeter;
     }
 
+    @Override
+    public double getSquare() {
+        double square = Math.PI * radius * radius;
+        return square;
+    }
+
     public int getRadius() {
         return radius;
     }

@@ -2,14 +2,19 @@ package homework.homework_7;
 
 public class Square extends Rectangle{
 
-    public Square(double sideA) {
-        this.sideA = sideA;
-        this.sideB = sideA;
-        this.sideC = sideA;
-        this.sideD = sideA;
-        this.angleA = 90;
-        this.angleB = 90;
-        this.angleC = 90;
-        this.angleD = 90;
+    public Square(double side) {
+        super(side, side);
+    }
+
+    @Override
+    public double getPerimeter() {
+        double perimeter = 4 * super.getSideA();
+        return perimeter;
+    }
+
+    @Override
+    public double getSquare() {
+        double square = super.getSideA() * super.getSideA();
+        return square;
     }
 }
