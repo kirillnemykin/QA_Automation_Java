@@ -12,6 +12,7 @@ public class Trapeze extends Quadrangle{
     @Override
     public double getPerimeter() {
         double perimeter = super.getSideA() + super.getSideB() + super.getSideC() + getSideD();
+        perimeter = Math.ceil(perimeter * 100.0) / 100.0;
         return perimeter;
     }
 
@@ -23,7 +24,7 @@ public class Trapeze extends Quadrangle{
         double d = super.getSideD();
         double p = (a+b+c+d)/2;
         double square = (a+b)/(a-b) * Math.sqrt((p-a)*(p-b)*(p-a-c)*(p-a-d));
-                //(a+b)/2 * (Math.sqrt(Math.pow(c,2)-Math.pow(((Math.pow((a-b),2)+Math.pow(c,2)-Math.pow(d,2))/2*(a-b)),2)));
+        square = Math.ceil(square * 100.0) / 100.0;
         return square;
     }
 }

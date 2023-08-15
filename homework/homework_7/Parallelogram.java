@@ -9,12 +9,14 @@ public class Parallelogram extends Quadrangle{
     @Override
     public double getPerimeter() {
         double perimeter = 2*super.getSideA() + 2*super.getSideB();
+        perimeter = Math.ceil(perimeter * 100.0) / 100.0;
         return perimeter;
     }
 
     @Override
     public double getSquare() {
-        double square = super.getSideA() * super.getSideB() * Math.sin(super.getAngleA());
+        double square = super.getSideA() * super.getSideB() * Math.sin(Math.toRadians(super.getAngleA()));
+        square = Math.ceil(square * 100.0) / 100.0;
         return square;
     }
 

@@ -16,6 +16,7 @@ public class Triangle extends Figure {
     @Override
     public double getPerimeter() {
         double perimeter = sideA + sideB + sideC;
+        perimeter = Math.ceil(perimeter * 100.0) / 100.0;
         return perimeter;
     }
 
@@ -23,6 +24,7 @@ public class Triangle extends Figure {
     public double getSquare() {
         double p = (sideA+sideB+sideC)/2;
         double square = Math.sqrt(p*(p-sideA)*(p-sideB)*(p-sideC));
+        square = Math.ceil(square * 100.0) / 100.0;
         return square;
     }
 
